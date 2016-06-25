@@ -55,4 +55,10 @@ static NSString *const detailsLabelText = @"请在刷新下试试看";
 
         [self hidefailureViewFromView:self.tableView];
     }];
-
+    
+# 效果图
+![](https://github.com/renmoqiqi/PlaceholderView/blob/master/PlaceholdViewDemo/Resource/1.png) 
+![](https://github.com/renmoqiqi/PlaceholderView/blob/master/PlaceholdViewDemo/Resource/2.png)  
+![](https://github.com/renmoqiqi/PlaceholderView/blob/master/PlaceholdViewDemo/Resource/3.png)  
+![](https://github.com/renmoqiqi/PlaceholderView/blob/master/PlaceholdViewDemo/Resource/4.png)  
+![](https://github.com/renmoqiqi/PlaceholderView/blob/master/PlaceholdViewDemo/Resource/5.png)  
