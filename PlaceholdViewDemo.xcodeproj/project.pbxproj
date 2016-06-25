@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		C005EF731D1A295F00347F20 /* UIViewController+PlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C005EF721D1A295F00347F20 /* UIViewController+PlaceholderView.m */; };
 		C038557A1D1BAE3A003C2580 /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03855791D1BAE3A003C2580 /* TestTableViewController.m */; };
+		C0E16D551D1EDB25002DD6FF /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E16D501D1EDB25002DD6FF /* 1.png */; };
+		C0E16D561D1EDB25002DD6FF /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E16D511D1EDB25002DD6FF /* 2.png */; };
+		C0E16D571D1EDB25002DD6FF /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E16D521D1EDB25002DD6FF /* 3.png */; };
+		C0E16D581D1EDB25002DD6FF /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E16D531D1EDB25002DD6FF /* 4.png */; };
+		C0E16D591D1EDB25002DD6FF /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E16D541D1EDB25002DD6FF /* 5.png */; };
 		C0FAFE8A1D18E60900180B31 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FAFE891D18E60900180B31 /* main.m */; };
 		C0FAFE8D1D18E60900180B31 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FAFE8C1D18E60900180B31 /* AppDelegate.m */; };
 		C0FAFE901D18E60900180B31 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FAFE8F1D18E60900180B31 /* ViewController.m */; };
@@ -23,6 +28,11 @@
 		C005EF721D1A295F00347F20 /* UIViewController+PlaceholderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+PlaceholderView.m"; sourceTree = "<group>"; };
 		C03855781D1BAE3A003C2580 /* TestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewController.h; sourceTree = "<group>"; };
 		C03855791D1BAE3A003C2580 /* TestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewController.m; sourceTree = "<group>"; };
+		C0E16D501D1EDB25002DD6FF /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		C0E16D511D1EDB25002DD6FF /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		C0E16D521D1EDB25002DD6FF /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		C0E16D531D1EDB25002DD6FF /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		C0E16D541D1EDB25002DD6FF /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
 		C0FAFE851D18E60900180B31 /* PlaceholdViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaceholdViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0FAFE891D18E60900180B31 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C0FAFE8B1D18E60900180B31 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -48,6 +58,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C0E16D4F1D1EDB25002DD6FF /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				C0E16D501D1EDB25002DD6FF /* 1.png */,
+				C0E16D511D1EDB25002DD6FF /* 2.png */,
+				C0E16D521D1EDB25002DD6FF /* 3.png */,
+				C0E16D531D1EDB25002DD6FF /* 4.png */,
+				C0E16D541D1EDB25002DD6FF /* 5.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		C0FAFE7C1D18E60900180B31 = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +89,7 @@
 		C0FAFE871D18E60900180B31 /* PlaceholdViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				C0E16D4F1D1EDB25002DD6FF /* Resource */,
 				C0FAFE9F1D18E62C00180B31 /* Classes */,
 				C0FAFE8B1D18E60900180B31 /* AppDelegate.h */,
 				C0FAFE8C1D18E60900180B31 /* AppDelegate.m */,
@@ -160,6 +183,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0FAFE981D18E60900180B31 /* LaunchScreen.storyboard in Resources */,
+				C0E16D581D1EDB25002DD6FF /* 4.png in Resources */,
+				C0E16D551D1EDB25002DD6FF /* 1.png in Resources */,
+				C0E16D561D1EDB25002DD6FF /* 2.png in Resources */,
+				C0E16D571D1EDB25002DD6FF /* 3.png in Resources */,
+				C0E16D591D1EDB25002DD6FF /* 5.png in Resources */,
 				C0FAFE951D18E60900180B31 /* Assets.xcassets in Resources */,
 				C0FAFE931D18E60900180B31 /* Main.storyboard in Resources */,
 			);

@@ -33,7 +33,7 @@ static NSString *const detailsLabelText = @"请在刷新下试试看";
     placeholderView.placeholderViewTapButtonTitle = @"重新刷新";
     placeholderView.placeholderViewTapButtonTitleFont = [UIFont systemFontOfSize:18];
     placeholderView.placeholderViewTapButtonTitleColor = [UIColor redColor];
-//    placeholderView.placeholderViewTapButtonImage = [UIImage imageNamed:@"button_background_foursquare_highlight"];
+    placeholderView.placeholderViewTapButtonImage = [UIImage imageNamed:@"button_background_foursquare_highlight"];
     placeholderView.placeholderViewTapButtonBgImage = [UIImage imageNamed:@"button_background_foursquare_highlight"];
 
 
