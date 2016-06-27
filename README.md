@@ -17,12 +17,12 @@ static NSString *const detailsLabelText = @"请在刷新下试试看";
 {
     UKPlaceholderView *placeholderView = [UKPlaceholderView showPlaceholderViewAddedTo:view];
     placeholderView.titleLabelText = titleLabelText;
-    placeholderView.detailsLabelText = detailsLabelText;
+//    placeholderView.detailsLabelText = detailsLabelText;
     placeholderView.placeholderImage = KPlaceholderImage;
     placeholderView.placeholderViewTapButtonTitle = @"重新刷新";
     placeholderView.placeholderViewTapButtonTitleFont = [UIFont systemFontOfSize:18];
     placeholderView.placeholderViewTapButtonTitleColor = [UIColor redColor];
-    placeholderView.placeholderViewTapButtonImage = [UIImage imageNamed:@"button_background_foursquare_highlight"];
+//    placeholderView.placeholderViewTapButtonImage = [UIImage imageNamed:@"button_background_foursquare_highlight"];
     placeholderView.placeholderViewTapButtonBgImage = [UIImage imageNamed:@"button_background_foursquare_highlight"];
 
 
@@ -31,13 +31,33 @@ static NSString *const detailsLabelText = @"请在刷新下试试看";
 
     placeholderView.titleLabelFont = [UIFont systemFontOfSize:kTitleFontSize];
     placeholderView.verticalSpace = kVerticalSpace;
+
+    //如果当前View 的父视图是滑动视图不让其滑动
+    UIScrollView *scrollTempView = (UIScrollView *)view;
+    if ([view isKindOfClass:[UIScrollView class]] || [view isKindOfClass:[UITableView class]] || [view isKindOfClass:[UICollectionView class]])
+    {
+        scrollTempView.scrollEnabled = NO;
+    }
+
+
     if (self.automaticallyAdjustsScrollViewInsets == NO ) {
-            placeholderView.verticalOffset = 0;
+
+        placeholderView.verticalOffset = 0;
 
     }
     else
     {
+        if ([view isKindOfClass:[UIScrollView class]] || [view isKindOfClass:[UITableView class]] || [view isKindOfClass:[UICollectionView class]])
+        {
             placeholderView.verticalOffset = -64;
+
+        }
+        else
+        {
+            placeholderView.verticalOffset = 0;
+
+        }
+
 
     }
 
@@ -46,6 +66,12 @@ static NSString *const detailsLabelText = @"请在刷新下试试看";
 
 - (void)hidefailureViewFromView:(UIView *)view
 {
+    //如果当前View 的父视图是滑动视图移除时候让其滑动
+    UIScrollView *scrollTempView = (UIScrollView *)view;
+    if ([view isKindOfClass:[UIScrollView class]] || [view isKindOfClass:[UITableView class]] || [view isKindOfClass:[UICollectionView class]])
+    {
+        scrollTempView.scrollEnabled = YES;
+    }
     [UKPlaceholderView hidePlaceholderViewForView:view];
 }
 
