@@ -24,7 +24,7 @@
     // Do any additional setup after loading the view, typically from a nib.
 //        self.edgesForExtendedLayout = UIRectEdgeNone;
 //    self.tabBarController.tabBar.hidden = YES;
-//    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 //    self.tabBarController.tabBar.frame = CGRectMake(0, self.view.bounds.size.height , self.view.bounds.size.width, 49);
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self showfailureViewInView:self.testTableView tapButtonBlock:^{
