@@ -3,77 +3,20 @@
 
 # 用法
 ```
+/**
+ *  功能：在某个View显示加载失败的默认视图
+ *
+ *  @param view 被添加的View
+ *  @param tapBlock 点击button 的block
+ */
+- (void)showfailureViewInView:(UIView *)view tapButtonBlock:(void(^)(void))tapButtonBlock;
 
-static const CGFloat kTitleFontSize = 16.f;
-static const CGFloat kVerticalSpace = 15.f;
-static NSString *const titleLabelText = @"数据加载失败";
-static NSString *const detailsLabelText = @"请在刷新下试试看";
-
-#define KPlaceholderImage [UIImage imageNamed:@"cover"]
-#define KPlaceholderViewTapButtonImage [UIImage imageNamed:@"testImage"]
-#define KTitleLabelColor [UIColor colorWithRed:86/255.0 green:86/255.0 blue:86/255.0 alpha:1.0]
-
-- (void)showfailureViewInView:(UIView *)view tapButtonBlock:(void(^)(void))tapButtonBlock
-{
-    UKPlaceholderView *placeholderView = [UKPlaceholderView showPlaceholderViewAddedTo:view];
-    placeholderView.titleLabelText = titleLabelText;
-//    placeholderView.detailsLabelText = detailsLabelText;
-    placeholderView.placeholderImage = KPlaceholderImage;
-    placeholderView.placeholderViewTapButtonTitle = @"重新刷新";
-    placeholderView.placeholderViewTapButtonTitleFont = [UIFont systemFontOfSize:18];
-    placeholderView.placeholderViewTapButtonTitleColor = [UIColor redColor];
-//    placeholderView.placeholderViewTapButtonImage = [UIImage imageNamed:@"button_background_foursquare_highlight"];
-    placeholderView.placeholderViewTapButtonBgImage = [UIImage imageNamed:@"button_background_foursquare_highlight"];
-
-
-    placeholderView.placeholderViewTapButtonBlock = tapButtonBlock;
-    placeholderView.titleLabelColor = KTitleLabelColor;
-
-    placeholderView.titleLabelFont = [UIFont systemFontOfSize:kTitleFontSize];
-    placeholderView.verticalSpace = kVerticalSpace;
-
-    //如果当前View 的父视图是滑动视图不让其滑动
-    UIScrollView *scrollTempView = (UIScrollView *)view;
-    if ([view isKindOfClass:[UIScrollView class]] || [view isKindOfClass:[UITableView class]] || [view isKindOfClass:[UICollectionView class]])
-    {
-        scrollTempView.scrollEnabled = NO;
-    }
-
-
-    if (self.automaticallyAdjustsScrollViewInsets == NO ) {
-
-        placeholderView.verticalOffset = 0;
-
-    }
-    else
-    {
-        if ([view isKindOfClass:[UIScrollView class]] || [view isKindOfClass:[UITableView class]] || [view isKindOfClass:[UICollectionView class]])
-        {
-            placeholderView.verticalOffset = -64;
-
-        }
-        else
-        {
-            placeholderView.verticalOffset = 0;
-
-        }
-
-
-    }
-
-
-}
-
-- (void)hidefailureViewFromView:(UIView *)view
-{
-    //如果当前View 的父视图是滑动视图移除时候让其滑动
-    UIScrollView *scrollTempView = (UIScrollView *)view;
-    if ([view isKindOfClass:[UIScrollView class]] || [view isKindOfClass:[UITableView class]] || [view isKindOfClass:[UICollectionView class]])
-    {
-        scrollTempView.scrollEnabled = YES;
-    }
-    [UKPlaceholderView hidePlaceholderViewForView:view];
-}
+/**
+ *  功能：隐藏加载失败的View
+ *
+ *  @param view 被添加的View
+ */
+- (void)hidefailureViewFromView:(UIView *)view;
 
 ```
     
