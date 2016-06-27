@@ -14,15 +14,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 //    self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.extendedLayoutIncludesOpaqueBars = NO;
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self showfailureViewInView:self.tableView tapButtonBlock:^{
 
         [self hidefailureViewFromView:self.tableView];
     }];
 
-    NSLog(@"%f,%f",self.tableView.frame.origin.y,self.tableView.frame.size.height);
 
+
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    NSLog(@"%f,%f",self.tableView.contentInset.top,self.tableView.contentInset.bottom);
 
 }
 

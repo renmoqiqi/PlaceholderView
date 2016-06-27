@@ -38,7 +38,7 @@
 
 static const CGFloat kTitleFontSize = 14.f;
 static const CGFloat kDetailsLabelFontSize = 16.f;
-static const CGFloat KVerticalOffset = 5.0f;
+static const CGFloat KVerticalOffset = 0.0f;
 static const CGFloat KVerticalSpace = 5.0f;
 
 
@@ -512,25 +512,12 @@ static const CGFloat KVerticalSpace = 5.0f;
     placeholderView = [[self alloc] initWithView:view];
     [view addSubview:placeholderView];
 
-    //如果当前View 的父视图是滑动视图不让其滑动
-    UIScrollView *scrollTempView = (UIScrollView *)placeholderView.superview;
-    if ([view isKindOfClass:[UIScrollView class]] || [view isKindOfClass:[UITableView class]] || [view isKindOfClass:[UICollectionView class]])
-    {
-        scrollTempView.scrollEnabled = NO;
-    }
     return placeholderView;
 }
 
 + (UKPlaceholderView *)hidePlaceholderViewForView:(UIView *)view
 {
     UKPlaceholderView *placeholderView = [self placeholderViewForView:view];
-
-    //如果当前View 的父视图是滑动视图移除时候让其滑动
-    UIScrollView *scrollTempView = (UIScrollView *)placeholderView.superview;
-    if ([view isKindOfClass:[UIScrollView class]] || [view isKindOfClass:[UITableView class]] || [view isKindOfClass:[UICollectionView class]])
-    {
-        scrollTempView.scrollEnabled = YES;
-    }
 
     if (placeholderView != nil) {
         [placeholderView removeFromSuperview];

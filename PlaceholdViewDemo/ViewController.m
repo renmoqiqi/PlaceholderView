@@ -13,6 +13,7 @@
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *testTableView;
+@property (weak, nonatomic) IBOutlet UIView *testView;
 
 @end
 
@@ -21,16 +22,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-[self showfailureViewInView:self.view tapButtonBlock:^{
+//        self.edgesForExtendedLayout = UIRectEdgeNone;
+//    self.tabBarController.tabBar.hidden = YES;
+//    [self.navigationController setNavigationBarHidden:YES animated:YES];
+//    self.tabBarController.tabBar.frame = CGRectMake(0, self.view.bounds.size.height , self.view.bounds.size.width, 49);
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    [self showfailureViewInView:self.testTableView tapButtonBlock:^{
 
 }];
+
+    [self showfailureViewInView:self.testView tapButtonBlock:^{
+
+    }];
 
 
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    NSLog(@"%f,%f",self.testTableView.contentInset.top,self.testTableView.contentInset.bottom);
+//    UIWindow *appKeyWindow = [UIApplication sharedApplication].keyWindow;
+//    UIView *appBaseView = appKeyWindow.rootViewController.view;
+//    CGRect viewControllerFrame =  [appBaseView convertRect:appBaseView.bounds toView:appKeyWindow];
+//    NSLog(@"%f,%f",viewControllerFrame.origin.y,viewControllerFrame.size.height);
+
 }
 
 @end

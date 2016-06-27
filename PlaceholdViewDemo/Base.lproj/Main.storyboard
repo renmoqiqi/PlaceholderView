@@ -17,25 +17,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="O2d-1r-54J">
-                                <rect key="frame" x="0.0" y="64" width="320" height="328"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FTh-l7-IxZ">
+                                <rect key="frame" x="40" y="130" width="240" height="254"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="328" id="RjS-Zd-mlT"/>
+                                    <constraint firstAttribute="height" constant="254" id="CjG-Jz-uHG"/>
+                                    <constraint firstAttribute="width" constant="240" id="gP1-hp-T1H"/>
                                 </constraints>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o8w-DZ-S8U">
+                                <rect key="frame" x="40" y="391" width="240" height="115"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="8Iy-fb-Hae"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.74901960779999999" green="0.74901960779999999" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="O2d-1r-54J" secondAttribute="trailing" id="6z5-9q-Ec1"/>
-                            <constraint firstItem="O2d-1r-54J" firstAttribute="centerY" secondItem="TYm-pM-Asa" secondAttribute="centerY" constant="-56" id="7MZ-yx-pgA"/>
-                            <constraint firstItem="O2d-1r-54J" firstAttribute="leading" secondItem="TYm-pM-Asa" secondAttribute="leading" id="F8Q-4E-ZZf"/>
-                            <constraint firstItem="O2d-1r-54J" firstAttribute="centerX" secondItem="TYm-pM-Asa" secondAttribute="centerX" id="t4N-J0-Ic6"/>
+                            <constraint firstItem="FTh-l7-IxZ" firstAttribute="centerX" secondItem="TYm-pM-Asa" secondAttribute="centerX" id="2ga-fZ-2vd"/>
+                            <constraint firstItem="Nr4-oC-Kjc" firstAttribute="top" secondItem="o8w-DZ-S8U" secondAttribute="bottom" constant="13" id="A9k-QC-DWZ"/>
+                            <constraint firstItem="FTh-l7-IxZ" firstAttribute="top" secondItem="h8b-Nd-8p9" secondAttribute="bottom" constant="66" id="gpu-nV-iaw"/>
+                            <constraint firstItem="o8w-DZ-S8U" firstAttribute="top" secondItem="FTh-l7-IxZ" secondAttribute="bottom" constant="7" id="pWi-fw-cvA"/>
+                            <constraint firstItem="o8w-DZ-S8U" firstAttribute="centerX" secondItem="TYm-pM-Asa" secondAttribute="centerX" id="xw3-5f-hCg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="U78-Qk-kQg"/>
                     <connections>
-                        <outlet property="testTableView" destination="O2d-1r-54J" id="aEV-fB-WUu"/>
+                        <outlet property="testTableView" destination="FTh-l7-IxZ" id="DtC-Zx-LEC"/>
+                        <outlet property="testView" destination="o8w-DZ-S8U" id="p9O-en-vMt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UqD-VD-ufl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -87,17 +97,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="DvY-gC-8Jd">
-                            <rect key="frame" x="0.0" y="136" width="320" height="0.0"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Ywb-jw-eYb">
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ywb-jw-eYb" id="m3H-cQ-fLe">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
