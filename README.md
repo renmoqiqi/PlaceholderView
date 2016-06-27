@@ -75,7 +75,7 @@ static NSString *const detailsLabelText = @"请在刷新下试试看";
     [UKPlaceholderView hidePlaceholderViewForView:view];
 }
 
-
+```
     
 # 效果图
 ![](https://github.com/renmoqiqi/PlaceholderView/blob/master/PlaceholdViewDemo/Resource/1.png) 
