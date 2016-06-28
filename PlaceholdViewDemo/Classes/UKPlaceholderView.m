@@ -76,7 +76,6 @@ static const CGFloat KVerticalSpace = 5.0f;
 
 - (instancetype)initWithView:(UIView *)view {
     NSAssert(view, @"View must not be nil.");
-
     return [self initWithFrame:view.bounds];
 }
 

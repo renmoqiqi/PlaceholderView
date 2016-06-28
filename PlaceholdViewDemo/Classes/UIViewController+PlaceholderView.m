@@ -12,13 +12,13 @@
 #pragma mark
 
 static const CGFloat kTitleFontSize = 16.f;
-static const CGFloat kVerticalSpace = 15.f;
-static NSString *const titleLabelText = @"数据加载失败";
-static NSString *const detailsLabelText = @"请在刷新下试试看";
-
-#define KPlaceholderImage [UIImage imageNamed:@"cover"]
-#define KPlaceholderViewTapButtonImage [UIImage imageNamed:@"testImage"]
-#define KTitleLabelColor [UIColor colorWithRed:86/255.0 green:86/255.0 blue:86/255.0 alpha:1.0]
+static const CGFloat kVerticalSpace = 10.f;
+//static NSString *const titleLabelText = @"数据加载失败";
+//static NSString *const detailsLabelText = @"请在刷新下试试看";
+//
+//#define KPlaceholderImage [UIImage imageNamed:@"cover"]
+//#define KPlaceholderViewTapButtonImage [UIImage imageNamed:@"testImage"]
+#define KTitleLabelColor [UIColor colorWithRed:112/255.0 green:112/255.0 blue:112/255.0 alpha:1.0]
 
 static NSString *const UKPlaceholderViewKeyPathContentInset = @"contentInset";
 
@@ -27,23 +27,23 @@ static NSString *const UKPlaceholderViewKeyPathContentInset = @"contentInset";
 
 @implementation UIViewController (PlaceholderView)
 
-- (void)showfailureViewInView:(UIView *)view tapButtonBlock:(void(^)(void))tapButtonBlock
+- (void)showPlaceholderViewTitle:(nullable NSString *)title subTitle:(nullable NSString *)subTitle  tapButtonBgImage:(nullable UIImage *)tapButtonBgImage tapButtonTitle:(nullable NSString *)tapButtonTitle placeholderImage:(nullable UIImage *)placeholderImage inView:(nullable UIView *)view tapButtonBlock:(void(^)(void))tapButtonBlock
 {
     UKPlaceholderView *placeholderView = [UKPlaceholderView showPlaceholderViewAddedTo:view];
-    placeholderView.titleLabelText = titleLabelText;
-//    placeholderView.detailsLabelText = detailsLabelText;
-    placeholderView.placeholderImage = KPlaceholderImage;
-    placeholderView.placeholderViewTapButtonTitle = @"重新刷新";
-    placeholderView.placeholderViewTapButtonTitleFont = [UIFont systemFontOfSize:18];
-    placeholderView.placeholderViewTapButtonTitleColor = [UIColor redColor];
-//    placeholderView.placeholderViewTapButtonImage = [UIImage imageNamed:@"button_background_foursquare_highlight"];
-    placeholderView.placeholderViewTapButtonBgImage = [UIImage imageNamed:@"button_background_foursquare_highlight"];
-
-
+    placeholderView.titleLabelText = title;
+    placeholderView.detailsLabelText = subTitle;
+    placeholderView.placeholderImage = placeholderImage;
+    placeholderView.placeholderViewTapButtonTitle = tapButtonTitle;
+    placeholderView.placeholderViewTapButtonTitleFont = [UIFont systemFontOfSize:kTitleFontSize];
+    placeholderView.placeholderViewTapButtonTitleColor = [UIColor whiteColor];
+    placeholderView.placeholderViewTapButtonBgImage = tapButtonBgImage;
     placeholderView.placeholderViewTapButtonBlock = tapButtonBlock;
     placeholderView.titleLabelColor = KTitleLabelColor;
+    placeholderView.detailsLabelColor = KTitleLabelColor;
 
     placeholderView.titleLabelFont = [UIFont systemFontOfSize:kTitleFontSize];
+    placeholderView.detailsLabelFont = [UIFont systemFontOfSize:kTitleFontSize];
+
     placeholderView.verticalSpace = kVerticalSpace;
     placeholderView.backgroundColor = [UIColor whiteColor];
     //如果当前View 的父视图是滑动视图不让其滑动
@@ -58,8 +58,33 @@ static NSString *const UKPlaceholderViewKeyPathContentInset = @"contentInset";
 
 }
 
+- (void)showPlaceholderViewTitle:(nullable NSString *)title subTitle:(nullable NSString *)subTitle  placeholderImage:(nullable UIImage *)placeholderImage inView:(nullable UIView *)view
+{
+    UKPlaceholderView *placeholderView = [UKPlaceholderView showPlaceholderViewAddedTo:view];
+    placeholderView.titleLabelText = title;
+    placeholderView.detailsLabelText = subTitle;
+    placeholderView.placeholderImage = placeholderImage;
+    placeholderView.placeholderViewTapButtonTitleFont = [UIFont systemFontOfSize:kTitleFontSize];
+    placeholderView.placeholderViewTapButtonTitleColor = [UIColor whiteColor];
+    placeholderView.titleLabelColor = KTitleLabelColor;
+    placeholderView.detailsLabelColor = KTitleLabelColor;
+    placeholderView.titleLabelFont = [UIFont systemFontOfSize:kTitleFontSize];
+    placeholderView.detailsLabelFont = [UIFont systemFontOfSize:kTitleFontSize];
 
-- (void)hidefailureViewFromView:(UIView *)view
+    placeholderView.verticalSpace = kVerticalSpace;
+    placeholderView.backgroundColor = [UIColor whiteColor];
+    //如果当前View 的父视图是滑动视图不让其滑动
+    UIScrollView *scrollTempView = (UIScrollView *)view;
+    if ([view isKindOfClass:[UIScrollView class]] || [view isKindOfClass:[UITableView class]] || [view isKindOfClass:[UICollectionView class]])
+    {
+        scrollTempView.scrollEnabled = NO;
+    }
+
+    [scrollTempView addObserver:self forKeyPath:UKPlaceholderViewKeyPathContentInset options:NSKeyValueObservingOptionNew context:NULL];
+}
+
+
+- (void)hidePlaceholderViewFromView:(nullable UIView *)view
 {
     //如果当前View 的父视图是滑动视图移除时候让其滑动
     UIScrollView *scrollTempView = (UIScrollView *)view;

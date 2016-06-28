@@ -15,10 +15,7 @@
     // Do any additional setup after loading the view, typically from a nib.
 //    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.automaticallyAdjustsScrollViewInsets = NO;
-    [self showfailureViewInView:self.view tapButtonBlock:^{
 
-        [self hidefailureViewFromView:self.view];
-    }];
 
 
 

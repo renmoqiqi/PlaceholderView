@@ -27,12 +27,11 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 //    self.tabBarController.tabBar.frame = CGRectMake(0, self.view.bounds.size.height , self.view.bounds.size.width, 49);
     self.automaticallyAdjustsScrollViewInsets = NO;
-    [self showfailureViewInView:self.testTableView tapButtonBlock:^{
+    [self showPlaceholderViewTitle:@"哈哈" subTitle:nil placeholderImage:[UIImage imageNamed:@"cover"] inView:self.view];
 
-}];
 
-    [self showfailureViewInView:self.testView tapButtonBlock:^{
-
+    [self showPlaceholderViewTitle:@"您还未加入专题学习" subTitle:@"去推荐里面看看吧" tapButtonBgImage:[UIImage imageNamed:@"button_background_foursquare_highlight"] tapButtonTitle:@"刷新刷新刷新刷新刷新" placeholderImage:[UIImage imageNamed:@"cover"] inView:self.view tapButtonBlock:^{
+        [self hidePlaceholderViewFromView:self.view];
     }];
 
 
